@@ -12,9 +12,7 @@ const searchElem = classname => {
 const clearScore = () => {
   const clear = document.querySelectorAll('.player').forEach(player => {
     player.querySelector('.score').textContent = '0';
-    console.log(player);
   });
-  console.log(clear);
 };
 
 const initStep = () => {
