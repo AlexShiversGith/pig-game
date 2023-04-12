@@ -9,6 +9,14 @@ const searchElem = classname => {
   return document.querySelector(`.${classname}`);
 };
 
+const clearScore = () => {
+  const clear = document.querySelectorAll('.player').forEach(player => {
+    player.querySelector('.score').textContent = '0';
+    console.log(player);
+  });
+  console.log(clear);
+};
+
 const initStep = () => {
   const init = Math.floor(Math.random() * 2) + 1;
   if (init > 1) {
@@ -83,6 +91,7 @@ const btnNew = searchElem('btn--new').addEventListener('click', () => {
   const player2 = prompt('Введите имя второго игрока');
   searchElem('player--0').querySelector('.name').textContent = player1;
   searchElem('player--1').querySelector('.name').textContent = player2;
+  clearScore();
   initStep();
   game = true;
 });
